@@ -16,7 +16,7 @@ function App() {
   }
   return (
     <>
-      <div className="d-flex">
+      <div className="d-flex flex-column flex-md-row">
         <Tool type={type} normalColor={normalColor} handleType={handleType} handleColor={handleColor} />
         <Preview type={type} normalColor={normalColor} />
       </div>
