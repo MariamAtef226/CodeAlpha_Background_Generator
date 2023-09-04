@@ -1,8 +1,22 @@
-export default function Preview({ type, normalColor }) {
+export default function Preview({ type, normalColor, dir, grad }) {
 
-    return <div className='preview-container' style={{ backgroundColor: normalColor }}>
-        {type == 'normal' && <div className='color bg-light'> background-color:{normalColor};  </div>}
+    let style = type == 'normal' ? { backgroundColor: normalColor } : { backgroundImage: `linear-gradient(to ${dir},${grad.c1},${grad.c2})` };
 
+    // a function to copy the resulted rule
+    function copier() {
+        var copyRule = document.querySelector(".color");
+        navigator.clipboard.writeText(copyRule.innerHTML);
+        alert("Copied the rule successfully!");
+    }
+
+
+    return <div className='preview-container text-center' style={style}>
+        
+        <div className='color bg-light'>
+            {type == 'normal' && " background-color:{normalColor}; "}
+            {type == 'gradient' && " background-image:linear-gradient(to {dir},{grad.c1},{grad.c2});"}
+        </div>
+        <button className='copy' onClick={copier}>Copy Rule</button>
 
     </div>
 }
