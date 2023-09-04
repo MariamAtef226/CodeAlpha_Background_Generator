@@ -28,7 +28,7 @@ export default function Tool({ type, normalColor, handleType, handleColor }) {
 
                             {type == 'normal' && (<>
                                 <div className="d-flex align-items-center mt-4">
-                                    <h4 className="me-3">Select Color:</h4>
+                                    <h4 className="me-3 text-start">Select Color:</h4>
                                     <input type='color' name='normal-color' value={normalColor} onChange={handleColor} />
                                 </div>
                             </>
