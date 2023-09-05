@@ -15,19 +15,19 @@ export default function Gradient({grad, handleGradient, handleDirection, directi
                 <h6 className="me-2 me-md-4 text-start">Direction:</h6>
                 <div className="">
                     <input className="me-2" type='radio' id='left' name='direction' value='left' checked={direction == 'left'} onChange={handleDirection} />
-                    <label htmlFor='normal'>←</label>
+                    <label htmlFor='left'>←</label>
                 </div>
                 <div className="">
                     <input className="me-2" type='radio' id='right' name='direction' value='right' checked={direction == 'right'} onChange={handleDirection} />
-                    <label htmlFor='normal'>→</label>
+                    <label htmlFor='right'>→</label>
                 </div>
                 <div className="">
                     <input className="me-2" type='radio' id='top' name='direction' value='top' checked={direction == 'top'} onChange={handleDirection} />
-                    <label htmlFor='normal'>↑</label>
+                    <label htmlFor='top'>↑</label>
                 </div>
                 <div className="">
                     <input className="me-2" type='radio' id='bottom' name='direction' value='bottom' checked={direction == 'bottom'} onChange={handleDirection} />
-                    <label htmlFor='normal'>↓</label>
+                    <label htmlFor='bottom'>↓</label>
                 </div>
 
             </div>

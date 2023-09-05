@@ -5,13 +5,11 @@
 /* tool section */
 
 .tool-container{
-  background-image: url('./assets/toolbg.jpg');
   height:60vh;
-  background: no-repeat cover;
 }
 
 .shadower{
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   color:white;
   height:100%;
   position: relative;

@@ -39,7 +39,7 @@ function App() {
 
   return (
     <>
-      <div className="d-flex flex-column flex-md-row">
+      <div className="d-flex flex-column flex-md-row" style={type == 'normal' ? { backgroundColor: normalColor } : { backgroundImage: `linear-gradient(to ${direction},${grad.c1},${grad.c2})` }}>
         <Tool type={type} normalColor={normalColor} handleType={handleType} handleColor={handleColor} handleDirection={handleDirection} direction={direction} grad={grad} handleGradient={handleGradient} />
         <Preview type={type} normalColor={normalColor} grad={grad} dir={direction} />
       </div>
