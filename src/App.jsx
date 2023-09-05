@@ -3,10 +3,10 @@ import Preview from "./components/Preview"
 import { useState } from "react";
 
 function App() {
-  let [type, setType] = useState('normal');
-  let [normalColor, setNormalColor] = useState('#ffffff');
-  let [grad, setGrad] = useState({ c1: '#ffffff', c2: '#ffffff' });
-  let [direction, setDirection] = useState('left')
+  let [type, setType] = useState('normal'); // determine color mode
+  let [normalColor, setNormalColor] = useState('#ffffff'); // store normal color value
+  let [grad, setGrad] = useState({ c1: '#ffffff', c2: '#ffffff' }); // store gradient colors value
+  let [direction, setDirection] = useState('left') // store direction of gradient
 
 
   // event handler functions
