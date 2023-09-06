@@ -1,13 +1,13 @@
-import Tool from "./components/Tool"
-import Preview from "./components/Preview"
+import Tool from "./components/Tool";
+import Preview from "./components/Preview";
 import { useState } from "react";
 
 function App() {
-  let [type, setType] = useState('normal'); // determine color mode
-  let [normalColor, setNormalColor] = useState('#ffffff'); // store normal color value
-  let [grad, setGrad] = useState({ c1: '#ffffff', c2: '#ffffff' }); // store gradient colors value
-  let [direction, setDirection] = useState('left') // store direction of gradient
-
+  let [type, setType] = useState("normal"); // determine color mode
+  let [normalColor, setNormalColor] = useState("#ffffff"); // store normal color value
+  let [grad, setGrad] = useState({ c1: "#ffffff", c2: "#ffffff" }); // store gradient colors value
+  let [direction, setDirection] = useState("left"); // store direction of linear gradient
+  let [dirRadial, setDirRadial] = useState("circle"); // store direction of radial gradient
 
   // event handler functions
   function handleType(event) {
@@ -28,23 +28,56 @@ function App() {
   function handleGradient(event) {
     let value = event.target.value;
     let name = event.target.name;
-    if (name == 'color1') {
+    if (name == "color1") {
       setGrad((prev) => ({ ...prev, c1: value }));
-    }
-    else {
+    } else {
       setGrad((prev) => ({ ...prev, c2: value }));
-
     }
+  }
+
+  function handleRadialDirection(event) {
+    let value = event.target.value;
+    setDirRadial(value);
   }
 
   return (
     <>
-      <div className="d-flex flex-column flex-md-row" style={type == 'normal' ? { backgroundColor: normalColor } : { backgroundImage: `linear-gradient(to ${direction},${grad.c1},${grad.c2})` }}>
-        <Tool type={type} normalColor={normalColor} handleType={handleType} handleColor={handleColor} handleDirection={handleDirection} direction={direction} grad={grad} handleGradient={handleGradient} />
-        <Preview type={type} normalColor={normalColor} grad={grad} dir={direction} />
+      <div
+        className="d-flex flex-column flex-md-row"
+        style={
+          type == "normal"
+            ? { backgroundColor: normalColor }
+            : type == "lgradient"
+            ? {
+                backgroundImage: `linear-gradient(to ${direction},${grad.c1},${grad.c2})`,
+              }
+            : {
+                backgroundImage: `radial-gradient(${dirRadial},${grad.c1} ,${grad.c2})`,
+              }
+        }
+      >
+        <Tool
+          type={type}
+          normalColor={normalColor}
+          handleType={handleType}
+          handleColor={handleColor}
+          handleDirection={handleDirection}
+          direction={direction}
+          grad={grad}
+          handleGradient={handleGradient}
+          dirRadial={dirRadial}
+          handleRadialDirection={handleRadialDirection}
+        />
+        <Preview
+          type={type}
+          normalColor={normalColor}
+          grad={grad}
+          dir={direction}
+          dirRadial={dirRadial}
+        />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
