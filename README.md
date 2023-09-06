@@ -13,7 +13,7 @@
 
 ## Project Description :page_facing_up:
 
-Background Generator is a simple React.js web app that generates the css rule for backgrounds whether it was plain colors or a linear gradient. User may select one of the two options (normal or gradient) and then they would play with the colors to bring out the shades they want that are displayed in the preview section. User may click on 'Copy Rule' button to copy the CSS rule to clipboard. Finally, the application is responsive on all devices.
+Background Generator is a simple React.js web app that generates the css rule for backgrounds whether it was plain colors or a gradient. User may select one of the options (normal, linear gradient or radial gradient) and then they would play with the colors to bring out the shades they want that are displayed in the preview section. User may click on 'Copy Rule' button to copy the CSS rule to clipboard. Finally, the application is responsive on all devices.
 
 ## Demo
 
