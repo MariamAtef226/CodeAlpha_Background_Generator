@@ -4,8 +4,13 @@ import { useState } from "react";
 
 function App() {
   let [type, setType] = useState("normal"); // determine color mode
-  let [normalColor, setNormalColor] = useState("#ffffff"); // store normal color value
-  let [grad, setGrad] = useState({ c1: "#ffffff", c2: "#ffffff" }); // store gradient colors value
+  let [normalColor, setNormalColor] = useState(
+    '#'+Math.floor(Math.random() * 16777215).toString(16)
+  ); // store initial random normal color value
+  let [grad, setGrad] = useState({
+    c1: '#'+Math.floor(Math.random() * 16777215).toString(16),
+    c2:'#'+ Math.floor(Math.random() * 16777215).toString(16),
+  }); // store random initial gradient colors value
   let [direction, setDirection] = useState("left"); // store direction of linear gradient
   let [dirRadial, setDirRadial] = useState("circle"); // store direction of radial gradient
 
@@ -39,6 +44,7 @@ function App() {
     let value = event.target.value;
     setDirRadial(value);
   }
+  console.log(Math.floor(Math.random() * 16777215).toString(16))
 
   return (
     <>
